@@ -1,5 +1,5 @@
 module.exports =
-    {turn, move, updateBoard, checkIfFlagReached, cloneRobot};
+    {turn, move, updateBoard, checkIfFlagReached,checkIfwaterReached,cloneRobot};
 
 const SYMBOLS = {
     robot: setReverse('R'),
@@ -80,6 +80,13 @@ function checkIfFlagReached(robot, board) {
     let flagReached = cell === SYMBOLS.flag || cell == 'F';
 
     return flagReached;
+}
+function checkIfwaterReached (robot, board) {
+    const cell = board[robot.position.line][robot.position.column];
+    let waterReached  = cell === SYMBOLS.water || cell == 'W';
+
+    return  waterReached;
+
 }
 
 // utils
