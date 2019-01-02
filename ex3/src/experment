@@ -1,0 +1,7 @@
+var x=0;
+if (x > 10) {
+    var snd = new Audio('/alarm.mp3');
+    snd.play();
+    setTimeout(function(){alert("Thank you!")},6000);
+
+}

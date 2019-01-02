@@ -19,11 +19,17 @@ const trailIndicators = {
 
 
 function turn(robot, step, turns) {
-    turns += 1;
-    return turns;
+
+    nbOfturn = turns + 1;
+    if (robot.head == 'up' && step == 'turn-right' )
+        robot.head = 'right' ;
+    else if ()
+    return nbOfturn;
+
 }
 
 function move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
+
     nbOfMoves += 1;
     return nbOfMoves;
 }

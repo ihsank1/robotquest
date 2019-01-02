@@ -1,0 +1,41 @@
+
+body {
+    background-color: #262626;
+    color: #ffffff;
+    font-size: 50px;
+}
+
+main {
+    width: 478px;
+    margin: auto;
+}
+
+output {
+}
+
+button {
+    font-size: 50px;
+    background-color: inherit;
+    color: white;
+    transition: all 1000ms;
+
+}
+.buttons button:hover {
+    cursor: pointer;
+    background-color: greenyellow;
+    transform: scale(1.2);
+
+
+
+
+}
+
+.buttons button {
+    width: 128px;
+    margin: 10px;
+
+}
+
+.startbutton {
+}
+

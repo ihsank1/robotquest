@@ -1,5 +1,5 @@
 const featuresToTest = require('../src/robotquest-features');
-
+/
 test('robot should have its head turned to the right when head is up and direction is right', () => {
    let robot = {
         position: {
@@ -9,11 +9,25 @@ test('robot should have its head turned to the right when head is up and directi
         head: 'up'
     };
 
-    let nbOfTurn = featuresToTest.turn(robot, 'right', 1);
+    let nbOfTurn = featuresToTest.turn(robot, 'turn-right', 1);
     expect(nbOfTurn).toBe(2);
     expect(robot.head).toBe('right');
 });
 
+
+test('robot should have its head turned to the down when head is right and direction is turn-right', () => {
+    let robot = {
+        position: {
+            line: 0,
+            column: 0
+        },
+        head: 'right'
+    };
+
+    let nbOfTurn = featuresToTest.turn(robot, 'turn-right', 2);
+    expect(nbOfTurn).toBe(3);
+    expect(robot.head).toBe('down');
+});
 
 test('robot should have its head down when head is left and direction is left', () => {
     let robot = {

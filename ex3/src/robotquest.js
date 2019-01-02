@@ -15,7 +15,7 @@ const PLAY_BOARD = [
     [R,   '.',  '.',   W]
 ];
 
-const STEPS_TO_FLAG = ['move', 'turn-right', 'move', 'move', 'move', 'turn-left', 'move', 'move'];
+const STEPS_TO_FLAG = ['turn-right', 'move', 'move', 'move', 'turn-left', 'move', 'move'];
 
 
 let ROBOT_START_STATE = {
@@ -37,6 +37,8 @@ function main() {
 
     let currentRobot = features.cloneRobot(ROBOT_START_STATE);
     let isFlagReached = false;
+    let IfwaterReached = false;
+
     renderBoard(board, isFlagReached);
 
     for (let index in STEPS_TO_FLAG) {
@@ -45,13 +47,22 @@ function main() {
 
         let hasMoved = applyStep(currentRobot, step, maxLineIndex, maxColumnIndex);
         isFlagReached = features.checkIfFlagReached(currentRobot, board);
+        IfwaterReached = features.checkIfwaterReached(currentRobot, board);
         features.updateBoard(board, previousRobotState, currentRobot);
 
+
         if (hasMoved) {
+
             renderBoard(board, isFlagReached);
         }
+        if (IfwaterReached)
+        {
+            console.log("game over");
+            break;
+        }
     }
-}
+    }
+
 
 
 function renderBoard(board, flagReached) {
